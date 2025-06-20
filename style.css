@@ -1,14 +1,21 @@
+/* Định dạng chung cho thẻ <body>: xóa margin, padding mặc định, đặt font và màu chữ mặc định cho trang */
 body{
+    /* Xóa bỏ margin mặc định (loại bỏ khoảng cách ngoài) */
     margin: 0;
+    /* Xóa bỏ padding mặc định (loại bỏ khoảng cách ngoài) */
     padding: 0;
+    /* Thiết lập font chữ cho toàn trang (Arial, Helvetica, sans-serif) */
     font-family: Arial, Helvetica, sans-serif;
+    /* Màu chữ xám nhạt */
     color: lightgray;
 }
 
+/* Thiết lập cuộn trang mượt mà khi bấm liên kết nội bộ */
 html{
     scroll-behavior: smooth;
 }
 
+/* Container chính bao bọc toàn bộ nội dung trang, sử dụng Flexbox để căn giữa nội dung theo chiều dọc */
 .container{
     position: relative;
     width: 100%;
@@ -20,16 +27,16 @@ html{
     background-color: #001f7c38;
 }
 
-
+/* Phần tử video nền (back-vid) cố định ở nền, hiển thị dưới các nội dung khác */
 .back-vid{
     position: fixed;
     right: 0;
     bottom: 0;
     z-index: -1;
-    mix-blend-mode:overlay;
+    mix-blend-mode: overlay;
 }
 
-
+/* Thanh điều hướng (header) mờ, cố định ở đầu trang */
 header{
     display: flex;
     position: absolute;
@@ -46,17 +53,19 @@ header{
     z-index: 999;
 }
 
+/* Nhóm nội dung bên trái header */
 .left{
     display: flex;
     align-items: center;
 }
 
+/* Logo trong header: thiết lập kích thước và khoảng cách */
 .left img{
     width: 95px;
     margin: 0 15px;
 }
 
-
+/* Menu điều hướng chính (danh sách ngang) trong header */
 header ul{
     display: flex;
     justify-content: space-between;
@@ -68,10 +77,12 @@ header ul{
     box-shadow: 0 0 10px #72a1de63;
 }
 
+/* Mỗi mục (li) trong menu - bỏ ký hiệu đầu dòng */
 header ul li{
     list-style: none;
 }
 
+/* Định dạng các liên kết trong menu: chữ trắng, đậm, khoảng cách đều */
 header ul a{
     text-decoration: none;
     color: white;
@@ -80,10 +91,12 @@ header ul a{
     margin: 0 10px;
 }
 
+/* Hiệu ứng hover cho liên kết menu: thêm bóng mờ đen phát sáng quanh chữ */
 header ul a:hover{
     text-shadow: 0 0 15px black;
 }
 
+/* Nhóm các icon (mạng xã hội) bên phải header */
 .box-icons{
     display: flex;
     align-items: center;
@@ -91,6 +104,7 @@ header ul a:hover{
     gap: 40px;
 }
 
+/* Định dạng các nút icon tròn: viền xanh, kích thước 30px, hiệu ứng hover */
 .box-icons a{
     text-decoration: none;
     color: white;
@@ -106,12 +120,14 @@ header ul a:hover{
     transition: 0.5s;
 }
 
+/* Hiệu ứng hover cho icon: đổi nền xanh, chữ đen, thêm ánh sáng quanh icon */
 .box-icons a:hover{
     background-color: #72a1de;
     color: black;
     box-shadow: 0 0 15px #72a1de;
 }
 
+/* Hộp chứa video 'blackhole' nền trang */
 .blackhole-box{
     position: absolute;
     top: 0;
@@ -120,13 +136,15 @@ header ul a:hover{
     justify-content: center;
     z-index: -1;
     mix-blend-mode: lighten;
-  }
+}
   
+/* Video nền toàn màn hình, đẩy lên trên một chút để khớp bố cục */
 .blackhole-box video{
     width: 100%;
     margin-top: -23.5%;
 }
 
+/* Phần giới thiệu (hero) chiếm toàn màn hình, gồm văn bản và hình ảnh/video minh họa */
 .hero{
     position: relative;
     display: flex;
@@ -136,11 +154,13 @@ header ul a:hover{
     justify-content: space-between;
 }
 
+/* Khối văn bản thông tin chính trong phần hero (bên trái) */
 .hero-info{
     position: absolute;
     left: 5%;
 }
 
+/* Nhãn tiêu đề nhỏ trong hero */
 .hero-info .hero-info-title{
     color: #72a1de;
     padding: 8px 5px;
@@ -151,6 +171,7 @@ header ul a:hover{
     box-shadow: 0 0 5px #72a1de84;
 }
 
+/* Tiêu đề chính nổi bật trong phần hero */
 .hero-info h1{
     font-size: 60px;
     max-width: 600px;
@@ -160,6 +181,7 @@ header ul a:hover{
     margin-bottom: 30px;
 }
 
+/* Đoạn mô tả giới thiệu trong hero */
 .hero-info p{
     max-width: 550px;
     line-height: 25px;
@@ -167,6 +189,7 @@ header ul a:hover{
     font-size: 20px;
 }
 
+/* Nút kêu gọi hành động (CTA) trong phần hero */
 .hero-info button{
     color: white;
     padding: 15px 35px;
@@ -178,11 +201,12 @@ header ul a:hover{
     transition: 0.3s;
 }
 
+/* Hiệu ứng hover cho nút CTA: thêm ánh sáng xung quanh */
 .hero-info button:hover{
     box-shadow: 0 0 15px #72a1de81;
 }
 
-/* Gradient Animation */
+/* Văn bản có hiệu ứng gradient màu sắc chuyển động */
 .gradient{
     background: linear-gradient(to right,#00aaa7, #7e42a7, #6600c5, #6070fd,#2a46ff, #0099ff, #008ead);
     background-size: 200%;
@@ -197,17 +221,19 @@ header ul a:hover{
     }
 }
 
+/* Hộp chứa video minh họa kỹ năng đặt trong phần hero (bên phải) */
 .skills-video-box{
     position: absolute;
     right: 3%;
 }
 
+/* Video minh họa kỹ năng với hiệu ứng hòa trộn lighten trên nền */
 .skills-video{
     height: 900px;
-    mix-blend-mode:lighten;
+    mix-blend-mode: lighten;
 }
 
-
+/* Biểu tượng cuộn xuống (scroll-down) hiển thị ở cuối phần hero để hướng dẫn người dùng */
 .scroll-down {
     height: 50px;
     width: 30px;
@@ -218,9 +244,11 @@ header ul a:hover{
     border-radius: 50px;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.626);
-  }
-  .scroll-down::before,
-  .scroll-down::after {
+}
+
+/* Sử dụng pseudo ::before và ::after để tạo mũi tên */
+.scroll-down::before,
+.scroll-down::after {
     content: "";
     position: absolute;
     top: 20%;
@@ -232,33 +260,33 @@ header ul a:hover{
     border-top: transparent;
     border-left: transparent;
     animation: scroll-down 2s ease-in-out infinite;
-  }
-  .scroll-down::before {
+}
+
+/* Đặt riêng cho ::before: bắt đầu muộn hơn 0.5s để hai mũi tên (before & after) lệch nhịp, tạo hiệu ứng nhấp nháy lần lượt */
+.scroll-down::before {
     top: 30%;
     animation-delay: 0.5s;
-    /* animation: scroll-down 1s ease-in-out infinite; */
-  }
+}
   
-  @keyframes scroll-down {
+/* Keyframes scroll-down: di chuyển mũi tên từ trên xuống dưới và làm mờ dần */
+@keyframes scroll-down {
     0% {
-      /* top:20%; */
-      opacity: 0;
+        /* top:20%; */
+        opacity: 0;
     }
     30% {
-      opacity: 1;
+        opacity: 1;
     }
     60% {
-      opacity: 1;
+        opacity: 1;
     }
     100% {
-      top: 90%;
-      opacity: 0;
+        top: 90%;
+        opacity: 0;
     }
-  }
+}
 
-
-
-
+/* Phần thông tin giới thiệu tiếp theo (info-section) với tiêu đề và các thẻ thông tin */
 .info-section{
     display: flex;
     align-items: center;
@@ -267,11 +295,13 @@ header ul a:hover{
     margin-top: 100px;
 }
 
+/* Tiêu đề chính của một section (cỡ lớn) */
 .section-title{
     font-size: 40px;
     font-weight: 700;
 }
 
+/* Lưới các thẻ thông tin (cards) giới thiệu kỹ năng/điểm mạnh */
 .info-cards{
     display: grid;
     grid-template-columns: auto auto auto;
@@ -281,9 +311,10 @@ header ul a:hover{
     margin-top: 30px;
 }
 
+/* Định dạng chung cho thẻ thông tin (nền màu, bo góc, hiệu ứng hover) */
 .card{
     display: flex;
-    align-items:flex-start;
+    align-items: flex-start;
     justify-content: center;
     position: relative;
     width: auto;
@@ -295,6 +326,7 @@ header ul a:hover{
     transition: 0.5s;
 }
 
+/* Tiêu đề của thẻ, đặt cố định bên trong thẻ gần giữa chiều cao */
 .card h1{
     position: absolute;
     margin: 0;
@@ -305,6 +337,7 @@ header ul a:hover{
     color: lightgray;
 }
 
+/* Đoạn mô tả nội dung thẻ, đặt cố định gần đáy thẻ */
 .card p{
     position: absolute;
     bottom: 3%;
@@ -316,6 +349,7 @@ header ul a:hover{
     line-height: 20px;
 }
 
+/* Hình ảnh minh họa bên trong thẻ (nếu có) */
 .card img{
     margin-top: 10px;
     width: 35%;
@@ -323,6 +357,7 @@ header ul a:hover{
     object-fit: cover;
 }
 
+/* Video minh họa bên trong thẻ (nếu có) */
 .card video{
     margin-top: 10%;
     width: 70%;
@@ -331,38 +366,43 @@ header ul a:hover{
     mix-blend-mode: lighten;
 }
 
-
+/* Hiệu ứng khi hover thẻ: thêm bóng mờ để thẻ nổi bật hơn */
 .card:hover{
     box-shadow: 0 0 15px rgb(211, 211, 211);
 }
 
+/* Tùy biến thẻ thứ 3 trong lưới (kích thước lớn hơn, chiếm 2 hàng) */
 .card:nth-child(3){
     grid-row: span 2;
     height: 83vh;
 }
 
+/* Điều chỉnh vị trí đoạn văn cho thẻ 3 (cao hơn một chút so với mặc định 3%) */
 .card:nth-child(3) p{
     bottom: 12%;
 }
 
+/* Điều chỉnh vị trí tiêu đề trong thẻ 3 (đặt ở khoảng 33% từ đáy) */
 .card:nth-child(3) h1{
     bottom: 33%;
 }
 
+/* Tùy biến thẻ thứ 4 trong lưới (chiều rộng gấp đôi, chiếm 2 cột) */
 .card:nth-child(4){
     grid-column: span 2;
 }
 
+/* Mở rộng độ rộng tối đa của đoạn văn trong thẻ 4 (vì thẻ to hơn) */
 .card:nth-child(4) p{
     max-width: 650px;
 }
 
+/* Điều chỉnh vị trí tiêu đề trong thẻ 4 (đặt ở khoảng 35% từ đáy) */
 .card:nth-child(4) h1{
     bottom: 35%;
 }
 
-
-
+/* Phần dự án cá nhân của tôi (my-project) hiển thị các dự án đã thực hiện */
 .my-project{
     display: flex;
     flex-direction: column;
@@ -375,6 +415,7 @@ header ul a:hover{
     margin-bottom: 700px;
 }
 
+/* Thẻ dự án (project-card) gồm hình/video dự án và phần thông tin mô tả */
 .project-card {
     display: flex;
     width: 100%;
@@ -384,31 +425,33 @@ header ul a:hover{
     justify-content: center;
 }
 
+/* Khung chứa hình ảnh/video của dự án (bên trái thẻ dự án) */
 .project-vidbox{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 50%;
-    mix-blend-mode:exclusion;
+    mix-blend-mode: exclusion;
     position: relative;
     cursor: pointer;
     transition: 0.5s;
     min-width: 400px;
-
 }
 
+/* Ảnh thu nhỏ của dự án bên trong khung video */
 .project-vidbox img{
     object-fit: cover;
     width: 100%;
     box-shadow: 0 0 10px lightgray;
     border-radius: 20px;
-    
 }
 
-.project-card video:hover{
+/* Hiệu ứng hover trên video dự án: thêm ánh sáng trắng quanh video */
+.project-card img:hover{
     box-shadow: 0 0 25px rgb(255, 255, 255);
 }
 
+/* Khung thông tin dự án (bên phải), chứa tiêu đề, mô tả và nút dự án */
 .project-info{
     display: flex;
     flex-direction: column;
@@ -418,6 +461,7 @@ header ul a:hover{
     padding-left: 10%;
 }
 
+/* Tiêu đề dự án (tên dự án) */
 .project-info h1{
     width: 90%;
     font-size: 25px;
@@ -428,6 +472,7 @@ header ul a:hover{
     max-width: 450px;
 }
 
+/* Mô tả ngắn về dự án */
 .project-info p{
     width: 90%;
     max-width: 400px;
@@ -436,6 +481,7 @@ header ul a:hover{
     margin-top: 0;
 }
 
+/* Nút để xem dự án chi tiết (ví dụ: xem thêm, demo) */
 .project-info button{
     color: white;
     padding: 15px 35px;
@@ -447,54 +493,31 @@ header ul a:hover{
     transition: 0.3s;
 }
 
+/* Hiệu ứng hover cho nút dự án: làm mờ nhẹ và thêm bóng */
 .project-info button:hover{
     opacity: 0.8;
     box-shadow: 0 0 15px #72a1de81;
 }
 
-.project-vidbox .hover-sign{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    height: 100px;
-}
 
-.hover-sign::before,
-.hover-sign::after {
-    content: "👆";
-    text-align: center;
-    position: absolute;
-    font-size: 50px;
-    top: 20%;
-    left: 40%;
-    border-radius: 40px;
-    animation: hover-animation 4s ease-in-out infinite;
-
-}
-
+/* Khi hover-sign có class .active (sau khi đã click), ẩn biểu tượng chỉ dẫn đi */
 .hover-sign.active{
     display: none;
 }
 
 @keyframes hover-animation {
-  0% {
-    /* top:20%; */
-    box-shadow: 0 0 5px rgb(255, 255, 255);
-    transform: translate(100%, 50%) rotate(30deg);
-  }
-
-  100% {
-    box-shadow: 0 0 5px rgb(255, 255, 255);
-    transform: translateX(80%, 80%) rotate(20deg);
-  }
+    0% {
+        /* top:20%; */
+        box-shadow: 0 0 5px rgb(255, 255, 255);
+        transform: translate(100%, 50%) rotate(30deg);
+    }
+    100% {
+        box-shadow: 0 0 5px rgb(255, 255, 255);
+        transform: translateX(80%, 80%) rotate(20deg);
+    }
 }
 
-
-
-
-/* Skills section */
+/* Phần kỹ năng (skills-section) chứa phần đồ họa và mô tả kỹ năng thiết kế & lập trình */
 .skills-section{
     display: flex;
     flex-direction: column;
@@ -502,6 +525,7 @@ header ul a:hover{
     position: relative;
 }
 
+/* Hộp bao quanh phần hình ảnh/đồ họa kỹ năng, phủ gần toàn màn hình */
 .skills-box{
     width: 100%;
     height: 90vh;
@@ -509,15 +533,17 @@ header ul a:hover{
     display: flex;
     align-items: start;
     justify-content: center;
-    mix-blend-mode:lighten;
+    mix-blend-mode: lighten;
     opacity: 0.7;
 }
 
+/* Hình ảnh nền minh họa cho phần kỹ năng (ví dụ hình thiết kế, code) */
 .skills-image{
     width: 70%;
-    mix-blend-mode:difference;
+    mix-blend-mode: difference;
 }
 
+/* Khối văn bản mô tả kỹ năng Thiết kế (Designer) bên trái phần kỹ năng */
 .Designer{
     position: absolute;
     display: flex;
@@ -528,17 +554,19 @@ header ul a:hover{
     max-width: 300px;
 }
 
+/* Tiêu đề "Designer" (có thể kèm icon) với cỡ chữ lớn */
 .Designer h1{
     font-size: 50px;
     display: flex;
     align-items: center;
 }
 
+/* Mô tả ngắn cho phần Designer */
 .Designer p{
     line-height: 23px;
 }
 
-
+/* Khối văn bản mô tả kỹ năng Lập trình (Coder) bên phải phần kỹ năng */
 .coder{
     position: absolute;
     display: flex;
@@ -549,25 +577,24 @@ header ul a:hover{
     max-width: 300px;
 }
 
+/* Tiêu đề "Coder" với cỡ chữ lớn tương tự Designer */
 .coder h1{
     font-size: 50px;
     display: flex;
     align-items: center;
 }
 
+/* Mô tả ngắn cho phần Coder */
 .coder p{
     line-height: 23px;
 }
 
-
-
+/* Định dạng chữ đặc biệt cho từ "Coder" (cỡ lớn 50px) */
 .coder-text{
-
     font-size: 50px;
 }
 
-/* SLIDER  */
-
+/* Thanh trượt hình ảnh tự động chạy ngang (slider) nằm trong phần kỹ năng */
 .slider{
     position: absolute;
     bottom: 5%;
@@ -581,15 +608,19 @@ header ul a:hover{
         #000 10% 90%,
         transparent
     );
-    mix-blend-mode:difference;
+    mix-blend-mode: difference;
     opacity: 0.7;
 }
+
+/* Danh sách chứa các mục (item) của slider, sắp xếp ngang */
 .slider .list{
     display: flex;
     width: 100%;
     min-width: calc(var(--width) * var(--quantity));
     position: relative;
 }
+
+/* Mỗi mục (item) của slider - ban đầu nằm ngoài khung và sẽ chạy qua khung */
 .slider .list .item{
     width: var(--width);
     height: var(--height);
@@ -599,9 +630,12 @@ header ul a:hover{
     transition: filter 0.5s;
     animation-delay: calc( (10s / var(--quantity)) * (var(--position) - 1) - 10s)!important;
 }
+
+/* Ảnh bên trong mỗi item slider (chiếm toàn bộ ô item) */
 .slider .list .item img{
     width: 100%;
 }
+
 @keyframes autoRun{
     from{
         left: 100%;
@@ -609,16 +643,19 @@ header ul a:hover{
         left: calc(var(--width) * -1);
     }
 }
+
+/* Khi người dùng hover vào slider: tạm dừng chạy và các ảnh chuyển sang trắng đen */
 .slider:hover .item{
     animation-play-state: paused!important;
     filter: grayscale(1);
 }
+
+/* Khi hover vào một ảnh trong slider: ảnh đó trở lại màu sắc (nổi bật) */
 .slider .item:hover{
     filter: grayscale(0);
 }
 
-
-  /* CONTACT SECTION */
+/* Phần liên hệ (contact) gồm form liên hệ và danh sách liên kết mạng xã hội */
 .contact-section{
     width: 80%;
     height: 100vh;
@@ -629,18 +666,21 @@ header ul a:hover{
     position: relative;
 }
 
+/* Tiêu đề phần Liên hệ */
 .contact-section h1{
     position: absolute;
     top: 10%;
     left: 40%;
 }
 
+/* Hộp chứa các liên kết (địa chỉ, mạng xã hội) dạng cột */
 .social-box {
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
+/* Định dạng từng liên kết liên hệ: chữ xám nhạt, không gạch chân */
 .social-box a{
     color: lightgray;
     text-decoration: none;
@@ -648,34 +688,39 @@ header ul a:hover{
     text-wrap: nowrap;
 }
 
+/* Định dạng icon (thẻ <i>) trước mỗi liên kết: màu tím nhạt, cỡ 30px, cách chữ 10px */
 .social-box i{
     color: #7668ff;
     font-size: 30px;
     margin-right: 10px;
 }
 
+/* Icon mạng xã hội trong thành phần social-icons (nếu có riêng): màu trắng, cách trên 40px (để tách nhóm) */
 .social-icons a i{
     color: white;
     margin-top: 40px;
 }
 
+/* Đoạn mô tả/ngắn trong form liên hệ (ví dụ giới thiệu hoặc phản hồi) */
 .contact-box p{
     max-width: 400px;
     margin-top: 30px;
     margin-bottom: 5px;
 } 
 
+/* Ô input nhập thông tin liên hệ (ví dụ email, tên) */
 .contact-box input{
     padding: 7.5px 30px;
     background-color: lightgray;
     width: 80%;
     height: 25px;
     border: none;
-    outline : none;
+    outline: none;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
+/* Nút gửi thông tin liên hệ */
 .contact-box button{
     margin-top: 30px;
     color: white;
@@ -688,11 +733,13 @@ header ul a:hover{
     transition: 0.3s;
 }
 
+/* Hiệu ứng hover cho nút gửi: làm mờ và tăng bóng sáng */
 .contact-box button:hover{
     opacity: 0.8;
     box-shadow: 0 0 15px #72a1de81;
 }
 
+/* Phần chân trang (footer) mờ đặt cuối màn hình */
 .footer{
     display: flex;
     justify-content: space-between;
@@ -706,14 +753,12 @@ header ul a:hover{
     padding: 0 3rem;
 }
 
-
-/* BLUR EFFECT ANIMAION */
-
+/* Áp dụng hoạt ảnh làm mờ (autoBlurAnimation) khi phần tử vào/ra màn hình */
 .autoBlur{
     animation: autoBlurAnimation linear both;
     animation-timeline: view();
-
 }
+
 @keyframes autoBlurAnimation{
     0%{
         filter: blur(40px);
@@ -728,28 +773,25 @@ header ul a:hover{
     }
 }
 
-
-/* AUTO DISPLAY ANIMAION */
+/* Áp dụng hoạt ảnh hiện dần (autoDisplayAnimation) khi phần tử xuất hiện */
 .autoDisplay{
     animation: autoDisplayAnimation both;
     animation-timeline: view();
-
 }
 
 @keyframes autoDisplayAnimation{
     from{
         filter: blur(10px);
         transform: translateY(-200px) scale(0);
-    } 50%{
+    } 
+    50%{
         opacity: 1;
         filter: blur(0px);
         transform: translateX(0) scale(1);
     }
 }
 
-
-/* FADEIN_LEFT */
-
+/* Áp dụng hoạt ảnh trượt từ trái (fadeInLeftAnimation) cho phần tử khi xuất hiện */
 .fadein-left{
     animation: fadeInLeftAnimation both;
     animation-timeline: view();
@@ -760,24 +802,25 @@ header ul a:hover{
         opacity: 0;
         transform: translateX(-500px) scale(0.2);
         filter: blur(10px);
-    } 35%,65%{
+    } 
+    35%,65%{
         opacity: 1;
         transform: translateX(0) scale(1);
         filter: blur(0px);
-    }100%{
+    }
+    100%{
         filter: blur(10px);
     }
 }
 
-/* Sidebar */
-
+/* Biểu tượng menu (thanh ngang) dùng cho mobile, ban đầu ẩn trên desktop */
 .menu-icon{
     font-size: 35px;
     cursor: pointer;
     display: none;
 }
 
-
+/* Sidebar (thanh bên) ẩn bên phải, sẽ trượt ra khi nhấn menu-icon trên mobile */
 .sidebar{
     position: fixed;
     right: 0;
@@ -790,9 +833,9 @@ header ul a:hover{
     backdrop-filter: blur(10px);
     opacity: 0;
     border-bottom-left-radius: 100%;
-    
 }
 
+/* Biểu tượng đóng (X) trong sidebar */
 .close-icon{
     font-size: 50px;
     color: lightgray;
@@ -800,29 +843,34 @@ header ul a:hover{
     cursor: pointer;
 }
 
+/* Danh sách menu bên trong sidebar */
 .sidebar ul{
     padding-left: 20px;
 }
 
+/* Mục menu trong sidebar (danh sách dọc), cách nhau 30px */
 .sidebar ul li{
     list-style: none;
     margin-bottom: 30px;
 }
 
+/* Định dạng liên kết menu trong sidebar: chữ lớn, đậm, sáng trên nền tối */
 .sidebar ul li a{
     text-decoration: none;
     color: lightgray;
     font-size: 30px;
     font-weight: 900;
-    text-shadow:0 0 15px #4c4c4c;
+    text-shadow: 0 0 15px #4c4c4c;
 }
 
+/* Khu vực icon mạng xã hội trong sidebar, nằm dưới menu */
 .social-sidebar{
     padding-left: 20px;
     margin-top: 60px;
     text-wrap: nowrap;
 }
 
+/* Định dạng các icon mạng xã hội trong sidebar: cỡ 35px, khoảng đệm 5px để dễ bấm */
 .social-sidebar a{
     font-size: 35px;
     padding: 5px 5px;
@@ -830,7 +878,7 @@ header ul a:hover{
     transition: 0.5s;
 }
 
-/* Sidebar Open ANimation */
+/* Hiệu ứng mở Sidebar */
 .sidebar.open-sidebar{
     animation: openSideBarAnimation 1.5s forwards;
 }
@@ -844,8 +892,7 @@ header ul a:hover{
     }
 }
 
-/* Sidebar close ANimation */
-
+/* Hiệu ứng đóng Sidebar */
 .sidebar.close-sidebar{
     animation: closeSideBarAnimation 1.5s forwards;
 }
@@ -865,162 +912,199 @@ header ul a:hover{
     }
 }
 
-
+/* Điều chỉnh cho màn hình dạng dọc (tỷ lệ <= 16:9) */
 @media (max-aspect-ratio: 16/9){
+    /* Video nền: đặt chiều cao 100% để phủ dọc, chiều rộng tự động (tránh cắt) */
     .back-vid{
         width: auto;
         height: 100%;
     }
 }
 
+/* Điều chỉnh cho màn hình rộng (tỷ lệ > 16:9) */
 @media (min-aspect-ratio: 16/9){
+    /* Video nền: đặt chiều rộng 100% để phủ ngang, chiều cao tự động (tránh cắt) */
     .back-vid{
         width: 100%;
         height: auto;
     }
 }
 
-
+/* Responsive cho màn hình <= 1200px (máy tính bảng, laptop nhỏ): điều chỉnh bố cục */
 @media screen and (max-width: 1200px){
+    /* Giảm phần video nền bị che: kéo margin-top thành -20% (ít hơn so với -23.5%) */
     .blackhole-box video{
         margin-top: -20%;
     }
 
+    /* Thu nhỏ kích thước tiêu đề hero để phù hợp màn hình (40px, dòng 40px) */
     .hero-info h1{
         font-size: 40px;
         max-width: 400px;
         line-height: 40px;
     }
 
-    .hero-info P{
+    /* Thu hẹp độ rộng tối đa đoạn mô tả hero (300px) cho gọn trên màn hình nhỏ hơn */
+    .hero-info p{
         max-width: 300px;
     }
 
+    /* Dời video kỹ năng sát mép phải (right 0%) */
     .skills-video-box{
         right: 0%;
     }
 
+    /* Giảm chiều cao video kỹ năng xuống ~500px */
     .skills-video-box video{
         height: 500px;
     }
 
+    /* Chuyển các thẻ thông tin (info-cards) thành 1 cột (thay vì 3 cột) */
     .info-cards{
         grid-template-columns: auto;
     }
 
+    /* Thẻ thứ 3: cho trải rộng 2 cột (span 2) và giảm chiều cao xuống 70vh */
     .card:nth-child(3){
         grid-column: span 2;
         height: 70vh;
     }
 
+    /* vị trí thẻ p*/
+    .card:nth-child(3) p{
+        bottom: 2%;
+    }
+
+    /* Giảm cỡ chữ tiêu đề các thẻ xuống 20px */
     .info-cards .card h1{
         font-size: 20px;
     }
 
+    /* Điều chỉnh vị trí tiêu đề thẻ 3 (bottom ~25% thay vì 33%) cho cân đối */
     .info-cards .card:nth-child(3) h1{
         bottom: 25%;
     }
 
+    /* Giảm chiều cao video bên trong thẻ xuống 60%, căn lại margin-top 5% */
     .card video{
         height: 60%;
-
         margin-top: 5%;
     }
 
+    /* Giảm khoảng cách dưới của phần dự án (my-project) còn 200px, thu nhỏ toàn phần (scale 0.8) */
     .my-project{
         margin-bottom: 200px;
         scale: 0.8;
     }
 
+    /* Căn lại tiêu đề phần liên hệ: dịch sang trái ~30% để gần giữa trên màn hình vừa */
     .contact-section .section-title {
         left: 30%;
     }
 }
 
+/* Responsive cho màn hình <= 700px (mobile): ẩn bớt và thay đổi bố cục để phù hợp điện thoại */
 @media screen and (max-width: 700px){
+    /* Cố định header trên mobile và giảm chiều cao xuống 50px */
     header {
         position: fixed;
         height: 50px;
     }
 
+    /* Ẩn menu chính (ul) trên mobile (sẽ dùng icon menu thay thế) */
     header ul{
         display: none;
     }
 
+    /* Ẩn các icon mạng xã hội trên header để giao diện gọn hơn trên mobile */
     header .box-icons{
         display: none;
     }
 
+    /* Hiển thị nút menu (menu-icon) trên mobile */
     .menu-icon{
         display: inline;
     }
 
+    /* Video nền: đặt chiều rộng 100%, chỉnh margin-top -15% để phù hợp màn hình nhỏ hơn */
     .blackhole-box video {
         width: 100%;
         margin-top: -15%;
     }
 
+    /* Tắt hiệu ứng autoBlur trên mobile (tránh gây nặng, không cần thiết trên màn hình nhỏ) */
     .autoBlur{
         animation: none;
     }
     
+    /* Sắp xếp lại phần hero theo cột (text trên, video dưới) và kéo dãn hero bao toàn màn hình mobile */
     .hero{
         flex-direction: column;
         top:0;
         bottom: 0;
         left: 0;
         right:0;
-        
-    }
-    .hero-info{
-        bottom: 5%;
+        height: 50vh;
     }
 
+    /* Di chuyển khối text hero xuống cách đáy 5% (để nằm phía trên nút scroll-down) */
+    .hero-info{
+        top: 38%;
+    }
+
+    /* Di chuyển biểu tượng scroll-down lên (cách đáy 5% thay vì 8%) */
     .scroll-down{
         bottom: 5%;
     }
 
+    /* Thu nhỏ khung video kỹ năng còn cao 200px và đặt cách top 5% trong hero (hiển thị nhỏ phía trên) */
     .hero .skills-video-box{
         height: 200px;
         top: 5%;
     }
 
-
-
+    /* Chuyển các thẻ thông tin thành 1 cột trên mobile */
     .info-cards{
         grid-template-columns: auto;
     }
 
+    /* Thẻ thứ 3: vẫn span 2 cột (dự phòng) và giảm chiều cao xuống 70vh trên mobile */
     .card:nth-child(3){
         grid-column: span 2;
         height: 70vh;
     }
 
+    /* Video trong thẻ: kéo rộng 100% thẻ trên mobile (để dễ xem) */
     .card video{
         width: 100%;
     }
     
+    /* Đảm bảo container bao trọn nội dung trên mobile (height: 100%) */
     .container{
         height: 100%;
     }
 
+    /* Thu nhỏ video dự án còn rộng ~250px, đẩy sang trái -100px (căn giữa tương đối) */
     .project-vidbox video{
         width: 250px;
         margin-left: -100px;
     }
 
+    /* Ẩn phần tràn của nội dung dự án, bỏ padding trái, kéo nội dung sang trái 50px (căn chỉnh cho mobile) */
     .project-info{
         overflow: hidden;
         padding-left: 0;
         margin-left: -50px;
     }
 
+    /* Tiêu đề dự án: giảm cỡ chữ xuống 20px, giới hạn chiều rộng 200px, cho phép xuống dòng */
     .project-info h1{
         font-size: 20px;
         max-width: 200px;
         text-wrap: wrap;
     }
 
+    /* Đoạn mô tả dự án: giảm cỡ chữ còn 10px, giới hạn 200px, cho phép xuống dòng nếu quá dài */
     .project-info p{
         font-size: 10px;
         text-wrap: wrap;
@@ -1028,179 +1112,216 @@ header ul a:hover{
         min-width: 0;
     }
 
+    /* Nút dự án: thu nhỏ đệm trong còn 5px 10px (nhỏ gọn trên mobile) */
     .project-info button{
         padding: 5px 10px;
     }
 
+    /* Tăng khoảng cách cuối phần dự án lên 600px để các phần sau không bị chồng lên (mobile) */
     .my-project{
         margin-bottom: 600px;
     }
 
+    /* Xếp thẻ dự án theo cột (video trên, text dưới), canh lề trái 25% để cân bằng, khoảng cách 30px giữa video và text */
     .project-card{
         flex-direction: column;
         margin-left: 25%;
         gap: 30px;
     }
     
+    /* Giảm độ rộng tối thiểu khung video dự án còn 200px (để vừa màn hình nhỏ) */
     .project-vidbox{
         min-width: 200px;
+        width: 100%;
     }
 
+    /* Mở rộng khối thông tin dự án chiếm 85% chiều rộng (cho text dễ đọc hơn) */
     .project-info{
         width: 85%;
     }
 
+    /* Không cho tiêu đề dự án xuống dòng trên mobile (giữ trên một dòng) */
     .project-info h1{
         text-wrap: nowrap;
     }
 
+    /* Cho phép đoạn mô tả dự án rộng đến 300px trên mobile (đỡ bị cắt chữ) */
     .project-info p{
         max-width: 300px;
     }
 
+    /* Điều chỉnh vị trí khối "Designer": lên cao 15% và vào phải 18% (không sát viền) trên mobile */
     .Designer{
         top: 15%;
         left: 18%;
     }
 
+    /* Thêm khoảng trống trên 70px cho tiêu đề Designer, bỏ khoảng cách dưới (để không chiếm chỗ) */
     .Designer h1{
         margin-bottom: 0;
         margin-top: 70px;
     }
 
+    /* Điều chỉnh vị trí khối "Coder": xuống thấp 50% và vào phải 18% để không đè lên khối Designer trên mobile */
     .coder{
         top: 50%;
         left: 18%;
     }
 
+    /* Bỏ khoảng cách dưới tiêu đề Coder để nội dung gọn hơn */
     .coder h1{
         margin-bottom: 0;
     }
 
+    /* Thu nhỏ các ảnh trong slider còn 70% bề rộng ô để vừa màn hình nhỏ */
     .slider .list .item img{
         width: 70%;
     }
 
+    /* Xếp phần liên hệ thành cột dọc, thêm khoảng cách trên 100px, dưới 50px cho thoáng trên mobile */
     .contact-section{
         flex-direction: column;
         margin-top: 100px;
         margin-bottom: 50px;
     }
 
+    /* Giảm cỡ chữ trong footer xuống 10px trên mobile */
     .footer{
         font-size: 10px;
     }
 
+    /* Căn chỉnh khối social-box sang trái 90px (để phù hợp bố cục hẹp) */
     .social-box{
         margin-left: -90px;
     }
 }
 
-
+/* Responsive cho màn hình rất nhỏ <= 480px (điện thoại nhỏ): tối ưu bố cục hiển thị */
 @media screen and (max-width: 480px) {
-
+    /* Ẩn hẳn video kỹ năng trong hero trên điện thoại rất nhỏ (không đủ chỗ hiển thị) */
     .hero .skills-video-box {
         display: none;
-        
     }
-
+        
+    /* Ẩn phần nội dung thừa của video nền để tránh xuất hiện cuộn ngang */
     .blackhole-box {
         overflow: hidden;
     }
 
+    /* Phóng to video nền lên 140% và đẩy lên -27% để lấp đầy màn hình dọc (loại bỏ viền đen) */
     .blackhole-box video {
         width: 140%;
         margin-top: -27%;
-
     }
 
+    /* Thu nhỏ nhẹ khu vực logo/tiêu đề header (90%) và đẩy sang trái 30px cho cân đối */
     .left {
         scale: 0.9;
         margin-left: -30px;
     }
 
+    /* Giảm cỡ chữ tiêu đề bên trái header xuống 20px trên màn hình nhỏ nhất */
     .left h2 {
         font-size: 20px;
     }
 
+    /* Thu nhỏ toàn bộ phần hero 90% để vừa vặn màn hình rất nhỏ */
     .hero {
         scale: 0.9;
     }
 
+    /* Đẩy khối text hero lên cao (cách đáy 15%) để không bị khuất trên màn hình nhỏ */
     .hero-info{
         bottom: 15%;
     }
 
+    /* Giảm cỡ chữ tiêu đề hero xuống 35px cho điện thoại rất nhỏ */
     .hero-info h1{
         font-size: 35px;
     }
 
+    /* Di chuyển biểu tượng scroll-down: đẩy lên (cách đáy 15%), dịch qua phải 60% (đặt dưới nội dung) */
     .scroll-down{
-        bottom: 15%;
+        bottom: -3%;
         left: 60%;
     }
 
+    /* Giảm cỡ chữ tiêu đề các phần xuống 25px cho điện thoại rất nhỏ */
     .section-title {
         font-size: 25px;
     }
 
+    /* Đảm bảo thẻ thông tin hiển thị theo cột dọc trên điện thoại rất nhỏ */
     .info-cards{
         display: flex;
         flex-direction: column;
     }
 
+    /* Đặt chiều cao tối thiểu 20rem (~320px) cho thẻ để giữ nội dung rõ ràng trên màn hình nhỏ */
     .card {
         min-height: 20rem;
     }
 
+    /* Thu nhỏ tiêu đề thẻ xuống rất nhỏ (5px) và đặt cao hơn (bottom 30%) để tránh tràn khung */
     .card h1{
-        bottom: 30%;
+        bottom: 35% !important;
         font-size: 5px;
     }
 
+    .my-project{
+        margin-top: 20px;
+    }
+
+    /* Giảm chiều cao mỗi khối dự án còn 50% trên màn hình rất nhỏ */
     .project-card {
         height: 50%;
     }
 
+    /* Giảm khoảng cách dưới đoạn mô tả dự án còn 15px (đỡ khoảng trống thừa) */
     .project-info p{
         margin-bottom: 15px;
     }
 
+    /* Kéo khối thông tin dự án sang trái 80px để canh lại bố cục trên màn hình rất nhỏ */
     .project-info{
         margin-left: -80px;
     }
 
+    /* Tăng chiều cao phần kỹ năng lên 120vh (để chứa đủ nội dung dàn xuống), đẩy khối hình sang phải 30px */
     .skills-box{
         height: 120vh;
         margin-right: 30px;
     }
 
+    /* Đặt thanh slider sát đáy phần kỹ năng (bottom 0) trên màn hình rất nhỏ */
     .slider{
         bottom: 0%;
     }
 
+    /* Thu nhỏ phần liên hệ còn 90%, tăng chiều cao lên 120vh (để chứa đủ nội dung khi thu nhỏ) */
     .contact-section{
         scale: 0.9;
         height: 120vh;
     }
 
+    /* Di chuyển tiêu đề Liên hệ: đẩy lên trên (top -30px) và canh trái 25% để hiển thị đẹp hơn trên màn hình nhỏ nhất */
     .contact-section .section-title {
         top: -30px;
         left: 25%;
     }
 
+    /* Tăng đệm trong của footer lên 15px (dễ bấm hơn trên màn hình nhỏ) */
     .footer{
         padding: 15px;
     }
 
-
-
+    /* Giới hạn độ rộng tối đa của dòng text trong footer còn 150px (tránh tràn dòng) */
     .footer h1{
         max-width: 150px;
     }
 
+    /* Giảm khoảng cách giữa các icon trong footer xuống 10px */
     .footer .box-icons{
         gap: 10px;
     }
-
 }
